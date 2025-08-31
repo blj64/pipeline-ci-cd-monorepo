@@ -87,11 +87,23 @@
               "zone.js/testing"
             ]
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "0cf62c47-604c-4145-9cf3-c1e81c1fdba6"
+    "analytics": "0cf62c47-604c-4145-9cf3-c1e81c1fdba6",
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }
