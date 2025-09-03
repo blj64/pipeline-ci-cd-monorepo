@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  backend:
+    image: ghcr.io/blj64/pipeline-ci-cd-monorepo/backend:${TAG:-latest}
+    restart: unless-stopped
+
+  frontend:
+    image: ghcr.io/blj64/pipeline-ci-cd-monorepo/frontend:${TAG:-latest}
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
