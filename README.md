@@ -30,12 +30,12 @@ L’objectif : démontrer un pipeline complet **CI/CD** de build, test et déplo
 
 ## 📐 Diagramme du pipeline
 
-```mermaid
 flowchart LR
-    A[Code push/PR] --> B[GitHub Actions CI]
-    B -->|Lint & Tests| C{OK ?}
-    C -->|No| D[Fail build ❌]
-    C -->|Yes| E[Build Docker images]
-    E --> F[Push to GHCR]
-    F --> G[Deploy staging (Docker Compose)]
-    G --> H[Frontend + Backend up ✅]
+  A[Code push / PR] --> B[GitHub Actions CI]
+  B -->|Lint & Tests| C{All good}
+  C -- No --> D[Fail build]
+  C -- Yes --> E[Build Docker images]
+  E --> F[Push to GHCR]
+  F --> G[Staging deploy (docker-compose)]
+  G --> H[Frontend + Backend up]
+
